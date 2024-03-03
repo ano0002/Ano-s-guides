@@ -14,4 +14,4 @@ If you find any issue, please create an issue on Github [here](https://github.co
 
 ## License
 
-See the [LICENSE](./LICENSE) file for license rights and limitations (GNU).
+See the [LICENSE](https://github.com/ano0002/Ano-s-guides/blob/main/LICENSE) file for license rights and limitations (GNU).
