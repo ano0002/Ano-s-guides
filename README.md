@@ -1,5 +1,17 @@
-This repository is just a collection of my guides on various topics.
+# Ano002's Guides
+
+Here you can find some guides I made I hope you'll find useful
 
 ## Table of Contents
 
-- [MediaServer](./MediaServer/MediaServer.pdf)
+- [Media Server](./MediaServer/MediaServer.html) <a href="./MediaServer/MediaServer.pdf" download>(⇓ PDF)</a>
+
+More guides will hopefully be added in the future.
+
+## Issues
+
+If you find any issue, please create an issue on Github [here](https://github.com/ano0002/Ano-s-guides/issues)
+
+## License
+
+See the [LICENSE](./LICENSE) file for license rights and limitations (GNU).
