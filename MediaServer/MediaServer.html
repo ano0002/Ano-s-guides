@@ -1,0 +1,427 @@
+<!DOCTYPE html><html><head>
+      <title>MediaServer</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\Anatole Sot\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.11\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      <div>
+<h1 id="the-guide-to-create-your-own-media-server-with-plex-sonarr-radarr-prowlarr-qbittorrent-and-overseer">The guide to create your own media server with Plex, Sonarr, Radarr, Prowlarr, qBitTorrent and Overseer </h1>
+<blockquote>
+<p>Music Support soon<br>
+(Lidarr, Deemix, PlexAmp, ...)<br>
+See <a href="https://github.com/ano0002/overseerr/tree/overseer-with-lidarr-support">https://github.com/ano0002/overseerr/tree/overseer-with-lidarr-support</a></p>
+</blockquote>
+<p>Most of the information in this guide comes from the official documentation of the software and the Trash Guides. Here are the links:</p>
+<ul>
+<li><a href="https://wiki.servarr.com/">https://wiki.servarr.com/</a></li>
+<li><a href="https://support.plex.tv/">https://support.plex.tv/</a></li>
+<li><a href="https://trash-guides.info/">https://trash-guides.info/</a></li>
+</ul>
+<h2 id="before-you-start">Before you start </h2>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Have a computer available which will be running 24/7</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Have a VPN (recommended)</li>
+</ul>
+<h2 id="index">Index </h2>
+<ul>
+<li><a href="#the-guide-to-create-your-own-media-server-with-plex-sonarr-radarr-prowlarr-qbittorrent-and-overseer">The guide to create your own media server with Plex, Sonarr, Radarr, Prowlarr, qBitTorrent and Overseer</a>
+<ul>
+<li><a href="#before-you-start">Before you start</a></li>
+<li><a href="#index">Index</a></li>
+<li><a href="#windows-installation">Windows Installation</a>
+<ul>
+<li><a href="#wsl-2-windows-subsystem-for-linux-and-ubuntu">WSL 2 (Windows Subsystem for Linux) and Ubuntu</a>
+<ul>
+<li><a href="#windows-10-vers-2004-or-higher-build-19041-and-higher-or-windows-11">Windows 10 vers 2004 or higher (Build 19041 and higher) or Windows 11</a></li>
+<li><a href="#any-other-windows-version">Any other Windows version</a></li>
+</ul>
+</li>
+<li><a href="#docker">Docker</a></li>
+<li><a href="#plex">Plex</a></li>
+<li><a href="#radarr">Radarr</a></li>
+<li><a href="#sonarr">Sonarr</a></li>
+<li><a href="#prowlarr">Prowlarr</a></li>
+<li><a href="#qbittorrent">qBitTorrent</a></li>
+<li><a href="#overseer">Overseer</a></li>
+</ul>
+</li>
+<li><a href="#ubuntu-installation">Ubuntu Installation</a>
+<ul>
+<li><a href="#plex-1">Plex</a></li>
+<li><a href="#sonarr-1">Sonarr</a></li>
+<li><a href="#radarr-and-prowlarr">Radarr and Prowlarr</a>
+<ul>
+<li><a href="#easy-way-as-described-here">Easy way (as described here)</a></li>
+<li><a href="#hands-on-way">Hands-on way</a></li>
+</ul>
+</li>
+<li><a href="#qbittorrent-1">qBitTorrent</a></li>
+<li><a href="#overseer-1">Overseer</a></li>
+</ul>
+</li>
+<li><a href="#configuration">Configuration</a>
+<ul>
+<li><a href="#user-and-group-permissions">User and Group permissions</a></li>
+<li><a href="#media-folders">Media folders</a></li>
+<li><a href="#qbittorrent-2">qBitTorrent</a></li>
+<li><a href="#radarr-1">Radarr</a></li>
+<li><a href="#sonarr-2">Sonarr</a></li>
+<li><a href="#prowlarr-1">Prowlarr</a></li>
+<li><a href="#plex-2">Plex</a></li>
+<li><a href="#overseer-2">Overseer</a></li>
+</ul>
+</li>
+<li><a href="#credits-and-software-used">Credits and software used</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="windows-installation">Windows Installation </h2>
+<p><img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&amp;logo=windows&amp;logoColor=white" alt="Windows"></p>
+<blockquote>
+<p>⚠️ <strong>This section only deals with the installation of the software on Windows not the configuration.<br>
+For that see <a href="#configuration">Section 3</a></strong></p>
+</blockquote>
+<p>This is all the software you need to install on your Windows machine to create your own media server :</p>
+<ul>
+<li>WSL 2 (Windows Subsystem for Linux) and Ubuntu</li>
+<li>Docker</li>
+<li>Plex</li>
+<li>Radarr</li>
+<li>Sonarr</li>
+<li>Prowlarr</li>
+<li>qBitTorrent</li>
+<li>Overseer<br>
+I also recommend you to install a VPN of your choice on your machine to protect your privacy.</li>
+</ul>
+<h3 id="wsl-2-windows-subsystem-for-linux-and-ubuntu">WSL 2 (Windows Subsystem for Linux) and Ubuntu </h3>
+<h4 id="windows-10-vers-2004-or-higher-build-19041-and-higher-or-windows-11httpslearnmicrosoftcomen-uswindowswslinstall"><a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows 10 vers 2004 or higher (Build 19041 and higher) or Windows 11</a> </h4>
+<p>Run this command:</p>
+<pre data-role="codeBlock" data-info="powershell" class="language-powershell powershell"><code>wsl <span class="token operator">--</span>install
+</code></pre><p>Then, restart your PC</p>
+<h4 id="any-other-windows-versionhttpslearnmicrosoftcomen-uswindowswslinstall-manual"><a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual">Any other Windows version</a> </h4>
+<ol>
+<li>Run PowerShell as administrator</li>
+<li>Paste this command:</li>
+</ol>
+<pre data-role="codeBlock" data-info="powershell" class="language-powershell powershell"><code><span class="token function">Enable-WindowsOptionalFeature</span> <span class="token operator">-</span>Online <span class="token operator">-</span>FeatureName Microsoft-Windows-Subsystem-Linux
+</code></pre><ol start="3">
+<li>Restart your PC</li>
+<li>Run PowerShell as administrator again</li>
+<li>Paste these two commands:</li>
+</ol>
+<pre data-role="codeBlock" data-info="powershell" class="language-powershell powershell"><code>dism<span class="token punctuation">.</span>exe <span class="token operator">/</span>online <span class="token operator">/</span><span class="token function">enable-feature</span> <span class="token operator">/</span>featurename:Microsoft-Windows-Subsystem-Linux <span class="token operator">/</span>all <span class="token operator">/</span>norestart
+dism<span class="token punctuation">.</span>exe <span class="token operator">/</span>online <span class="token operator">/</span><span class="token function">enable-feature</span> <span class="token operator">/</span>featurename:VirtualMachinePlatform <span class="token operator">/</span>all <span class="token operator">/</span>norestart
+</code></pre><ol start="6">
+<li>Restart your PC Again</li>
+<li>Download the Linux Kernel Update Package from<br>
+<a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi</a></li>
+<li>Then, run powershell as administrator again and paste this command:</li>
+</ol>
+<pre data-role="codeBlock" data-info="powershell" class="language-powershell powershell"><code>wsl <span class="token operator">--</span><span class="token function">set-default</span><span class="token operator">-</span>version 2
+</code></pre><ol start="9">
+<li>Download and install Ubuntu from the Microsoft Store</li>
+</ol>
+<h3 id="docker">Docker </h3>
+<p>Download and install Docker Desktop from <a href="https://docs.docker.com/desktop/install/windows-install/">here</a></p>
+<h3 id="plex">Plex </h3>
+<p>Download and install Plex Media Server from <a href="https://www.plex.tv/media-server-downloads/?cat=computer&amp;plat=windows">here</a></p>
+<h3 id="radarr">Radarr </h3>
+<p>Download and run the Radarr installer from <a href="https://radarr.video/#download">here</a></p>
+<h3 id="sonarr">Sonarr </h3>
+<p>Download and run the Sonarr installer from <a href="https://sonarr.tv/#download">here</a></p>
+<h3 id="prowlarr">Prowlarr </h3>
+<p>Download and run the Prowlarr installer from <a href="https://prowlarr.com/#download">here</a></p>
+<h3 id="qbittorrent">qBitTorrent </h3>
+<p>Download and install qBitTorrent from <a href="https://www.qbittorrent.org/download">here</a></p>
+<h3 id="overseer">Overseer </h3>
+<ol>
+<li>Start by launching Docker Desktop</li>
+<li>Start cmd</li>
+<li>Then run these commands in the terminal</li>
+</ol>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">docker</span> volume create overseerr-data
+<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span> overseerr <span class="token parameter variable">-e</span> <span class="token assign-left variable">LOG_LEVEL</span><span class="token operator">=</span>debug <span class="token parameter variable">-p</span> <span class="token number">5055</span>:5055 <span class="token parameter variable">-v</span> <span class="token string">"overseerr-data:/app/config"</span> <span class="token parameter variable">--restart</span> unless-stopped sctx/overseerr:latest
+</code></pre><p><strong>You're done with the installation! Now, you can move on to the <a href="#configuration">configuration</a> of the software.</strong></p>
+<h2 id="ubuntu-installation">Ubuntu Installation </h2>
+<p><img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&amp;logo=ubuntu&amp;logoColor=white" alt="Ubuntu"></p>
+<blockquote>
+<p>⚠️ <strong>This section only deals with the installation of the software on Ubuntu not the configuration.<br>
+For that see <a href="#configuration">Section 3</a></strong></p>
+</blockquote>
+<p>This is all the software you need to install on your Ubuntu machine to create your own media server :</p>
+<ul>
+<li>Plex</li>
+<li>Radarr</li>
+<li>Sonarr</li>
+<li>Prowlarr</li>
+<li>qBitTorrent</li>
+<li>Overseer<br>
+I also recommend you to install a VPN of your choice on your machine to protect your privacy.</li>
+</ul>
+<h3 id="plex-1">Plex </h3>
+<p>Download the Plex Media Server .deb package from <a href="https://www.plex.tv/media-server-downloads/?cat=server">here</a></p>
+<p>Then, run these commands in the terminal:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> dpkg <span class="token parameter variable">-i</span> <span class="token operator">&lt;</span>Your <span class="token function">file</span> name.deb<span class="token operator">&gt;</span>
+</code></pre><p>If you don't have access to a GUI, you can run these commands in the terminal (you'll need to have <code>curl</code> installed):</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">curl</span> <span class="token operator">&lt;</span>Your download link<span class="token operator">&gt;</span> <span class="token parameter variable">-o</span> plexmediaserver.deb
+<span class="token function">sudo</span> dpkg <span class="token parameter variable">-i</span> plexmediaserver.deb
+</code></pre><p>To get the download link, go there : <a href="https://www.plex.tv/media-server-downloads/?cat=computer&amp;plat=linux">Linux distributions of plex media server</a></p>
+<h3 id="sonarr-1">Sonarr </h3>
+<p>To install Sonarr, simply run this command in the terminal:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">curl</span> -o- https://raw.githubusercontent.com/Sonarr/Sonarr/develop/distribution/debian/install.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span>
+</code></pre><p>Or with wget:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">wget</span> -qO- https://raw.githubusercontent.com/Sonarr/Sonarr/develop/distribution/debian/install.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span>
+</code></pre><p>Leave everything as default and complete the installation</p>
+<p>If neither of these commands work, you can follow the instructions on the official download page of Sonarr <a href="https://sonarr.tv/#downloads-linux-ubuntu">here</a></p>
+<h3 id="radarr-and-prowlarr">Radarr and Prowlarr </h3>
+<h4 id="easy-way-as-described-herehttpswikiservarrcominstall-script">Easy way (as described <a href="https://wiki.servarr.com/install-script">here</a>) </h4>
+<p>Run these commands in the terminal:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">curl</span> <span class="token parameter variable">-o</span> servarr-install-script.sh https://raw.githubusercontent.com/Servarr/Wiki/master/servarr/servarr-install-script.sh
+<span class="token function">sudo</span> <span class="token function">bash</span> servarr-install-script.sh
+</code></pre><p>Once you see</p>
+<pre data-role="codeBlock" data-info="" class="language-text text"><code>Select the application to install: 
+1) lidarr
+2) prowlarr
+3) radarr
+4) readarr
+5) whisparr
+6) quit
+#?
+</code></pre><p>Select prowlarr by typing <code>2</code> and then press enter<br>
+Leave everything as default and complete the installation<br>
+Once you see the message <code>Install complete</code> you can move on to the next application by restarting the script with <code>sudo bash servarr-install-script.sh</code> and selecting the next application.<br>
+This time select radarr.</p>
+<h4 id="hands-on-way">Hands-on way </h4>
+<p>Follow the instructions on the official documentation of the softwares:<br>
+<a href="https://wiki.servarr.com/radarr/installation/linux">https://wiki.servarr.com/radarr/installation/linux</a><br>
+<a href="https://wiki.servarr.com/prowlarr/installation/linux">https://wiki.servarr.com/prowlarr/installation/linux</a></p>
+<h3 id="qbittorrent-1">qBitTorrent </h3>
+<p>To install qBitTorrent Web-UI, simply run this command in the terminal:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> qbittorrent-nox
+</code></pre><p>You'll also need a user to run qBitTorrent, so run these commands in the terminal:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> adduser qbittorrent-nox
+<span class="token function">sudo</span> adduser qbittorrent-nox media
+</code></pre><p>You also want to be part of the media group, now is a good time to add yourself, so run this command in the terminal:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> adduser <span class="token operator">&lt;</span>Your username<span class="token operator">&gt;</span> media
+</code></pre><p>Then, you need to create a service file for qBitTorrent, so run these commands in the terminal:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">nano</span> /etc/systemd/system/qbittorrent-nox.service
+</code></pre><p>Then, paste this in the file:</p>
+<pre data-role="codeBlock" data-info="ini" class="language-ini ini"><code><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">Unit</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">Description</span><span class="token punctuation">=</span><span class="token value attr-value">qBittorrent Command Line Client</span>
+<span class="token key attr-name">After</span><span class="token punctuation">=</span><span class="token value attr-value">network.target</span>
+
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">Service</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">Type</span><span class="token punctuation">=</span><span class="token value attr-value">forking</span>
+<span class="token key attr-name">User</span><span class="token punctuation">=</span><span class="token value attr-value">qbittorrent-nox</span>
+<span class="token key attr-name">Group</span><span class="token punctuation">=</span><span class="token value attr-value">media</span>
+<span class="token key attr-name">UMask</span><span class="token punctuation">=</span><span class="token value attr-value">007</span>
+<span class="token key attr-name">ExecStart</span><span class="token punctuation">=</span><span class="token value attr-value">/usr/bin/qbittorrent-nox -d --webui-port=8080</span>
+<span class="token key attr-name">Restart</span><span class="token punctuation">=</span><span class="token value attr-value">on-failure</span>
+
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">Install</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">WantedBy</span><span class="token punctuation">=</span><span class="token value attr-value">multi-user.target</span>
+</code></pre><p>To save and exit, press <code>Ctrl</code> + <code>X</code>, then <code>Y</code>, then <code>Enter</code></p>
+<p>Then, you're going to enable and start the service, so run these commands in the terminal:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Reload the systemd daemon to be aware of the new service file</span>
+<span class="token function">sudo</span> systemctl daemon-reload
+<span class="token comment"># Enable the service</span>
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> qbittorrent-nox
+<span class="token comment"># Start the service</span>
+<span class="token function">sudo</span> systemctl start qbittorrent-nox
+</code></pre><p>Finally, you can check the status of the service by running this command in the terminal:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> systemctl status qbittorrent-nox
+</code></pre><p>You should see something like this if everything went well :</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>● qbittorrent-nox.service - qBittorrent Command Line Client
+     Loaded: loaded <span class="token punctuation">(</span>/etc/systemd/system/qbittorrent-nox.service<span class="token punctuation">;</span> enabled<span class="token punctuation">;</span> vendor preset: enabled<span class="token punctuation">)</span>
+     Active: active <span class="token punctuation">(</span>running<span class="token punctuation">)</span> since Sat <span class="token number">2024</span>-03-02 00:30:35 UTC<span class="token punctuation">;</span> 27min ago
+   Main PID: <span class="token number">9301</span> <span class="token punctuation">(</span>qbittorrent-nox<span class="token punctuation">)</span>
+      Tasks: <span class="token number">12</span> <span class="token punctuation">(</span>limit: <span class="token number">1070</span><span class="token punctuation">)</span>
+     Memory: <span class="token number">46</span>.6M
+        CPU: <span class="token number">7</span>.230s
+     CGroup: /system.slice/qbittorrent-nox.service
+             └─9301 /usr/bin/qbittorrent-nox <span class="token parameter variable">-d</span> --webui-port<span class="token operator">=</span><span class="token number">8080</span>
+
+Mar 02 00:30:34 Overseerr systemd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Starting qBittorrent Command Line Client<span class="token punctuation">..</span>.
+Mar 02 00:30:35 Overseerr systemd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Started qBittorrent Command Line Client.
+</code></pre><h3 id="overseer-1">Overseer </h3>
+<p>To install Overseer, simply run this one-liner in the terminal as overseer is a snap package:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> snap <span class="token function">install</span> overseerr
+</code></pre><p><strong>You're done with the installation! Now, you can move on to the <a href="#configuration">configuration</a> of the software.</strong></p>
+<h2 id="configuration">Configuration </h2>
+<h3 id="user-and-group-permissions">User and Group permissions </h3>
+<p>Each software needs to have access to your media files. To do so, you need to give the user running the software access to your media files.<br>
+By default, here are the users running the softwares:</p>
+<ul>
+<li>Plex: plex</li>
+<li>Radarr: radarr</li>
+<li>Sonarr: sonarr</li>
+<li>Prowlarr: prowlarr</li>
+<li>qBitTorrent: qbittorrent-nox</li>
+<li>Overseer: root (to make sure this is the case, run <code>systemctl show -pUser,UID snap.overseerr.daemon.service</code> and check the user is blank and the UID is equal to <code>[not set]</code>)</li>
+</ul>
+<p>You're going to want all these users to be part of the group <code>media</code> so you can more easily give them access to your media files. To know who is part of the group <code>media</code>, run this command in the terminal:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>getent group media
+</code></pre><p>You should see something like this:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>media:x:1001:prowlarr,radarr,sonarr,qbittorrent-nox,plex,<span class="token operator">&lt;</span>Your username<span class="token operator">&gt;</span>
+</code></pre><p>(of course, <code>&lt;Your username&gt;</code> is replaced by your user account name)</p>
+<p>If you don't see all the users, you can add them to the group <code>media</code> by running this command in the terminal:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">usermod</span> <span class="token parameter variable">-a</span> <span class="token parameter variable">-G</span> media <span class="token operator">&lt;</span>username<span class="token operator">&gt;</span>
+</code></pre><p>Replace <code>&lt;username&gt;</code> with the name of the user you want to add to the group <code>media</code><br>
+Once you've added all the users to the group <code>media</code>, you can give the group <code>media</code> access to your media files by running this command in the terminal:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">chown</span> <span class="token parameter variable">-R</span> :media /path/to/your/media
+<span class="token function">sudo</span> <span class="token function">chmod</span> <span class="token parameter variable">-R</span> <span class="token number">775</span> /path/to/your/media
+</code></pre><p>Now, you can move on to the configuration of your media folders.</p>
+<h3 id="media-folders">Media folders </h3>
+<p>When it comes to media folders, I <strong>strongly</strong> recommend you to organize your media like this (this is the organization I use and it works perfectly with Plex, Radarr, Sonarr, Prowlarr and Overseer):</p>
+<pre data-role="codeBlock" data-info="" class="language-text text"><code>Media
+├── TempDownloads
+├── Torrents
+├── Movies
+│   ├── Movie 1(Year)
+│   │  └── Movie 1.(mkv/mp4/...)
+│   ├── Movie 2(Year)
+│   │  └── Movie 2.(mkv/mp4/...)
+│   └── ...
+├── Series
+│   ├── Series 1
+│   │  ├── Season 1
+│   │  │  ├── Series 1 - S01E01.(mkv/mp4/...)
+│   │  │  └── Series 1 - S01E2.(mkv/mp4/...)
+│   │  ├── Season 2
+│   │  └── ...
+│   ├── Series 2
+│   └── ...
+└── Music (soon to be supported)
+    ├── Artist 1
+    │  ├── Album 1
+    │  │  ├── Song 1.mp3
+    │  │  └── Song 2.mp3
+    │  ├── Album 2
+    │  └── ...
+    ├── Artist 2
+    └── ...
+</code></pre><p>Of course, you can add more folders like <code>Documentaries</code>, <code>Anime</code>, <code>Music Videos</code>, etc. but this is the basic structure you should have.</p>
+<blockquote>
+<p>⚠️ <strong>You need to make sure your media group has access to all these folders and files</strong><br>
+If you don't know how to do that, see <a href="#user-and-group-permissions">User and Group permissions</a></p>
+</blockquote>
+<p>Once you've organized your media like this, you can move on to the configuration of the software.</p>
+<h3 id="qbittorrent-2">qBitTorrent </h3>
+<p>To configure qBitTorrent, you need to go to <code>http://&lt;your-server-ip&gt;:8080</code> in your browser. You'll be asked for a username and a password, the default username is <code>admin</code> and the default password is <code>adminadmin</code>.<br>
+Once you're logged in, go into <code>Tools</code> &gt; <code>Options</code> &gt; <code>Web UI</code> and set the username and password you want. Then,  and set the <code>Default Save Path:</code> to the folder where you want your downloads to be saved (If you followed my recommandations it should be <code>/path/to/your/media/TemDownloads</code>). I also recommend to check <code>Copy .torrent files to:</code> and set it to <code>/path/to/your/media/Torrents</code> so you can keep track of the torrents you've downloaded and if you happen to lose one of your file you can find them back easily. When you're done, click on <code>Save</code> at the bottom of the page.</p>
+<p>To make sure qBitTorrent is working properly, you can download a torrent from a website like <a href="https://archive.org/details/classicpcgames">this one</a> and add it to qBitTorrent. If the download starts and finishes without any issue, you're good to go.</p>
+<h3 id="radarr-1">Radarr </h3>
+<p>To start to configure Radarr, visit <code>http://&lt;your-server-ip&gt;:7878</code> in your browser. You'll first be asked to enable and configure authentification, choose your preferred method and complete the step.<br><br>
+You can now go in <code>Settings</code> &gt; <code>Media Management</code> and check the first ckecbox which should be <code>Rename Movies</code>, after checking it you should have a new field appear, there you can specify the Movie Name Format you want, I like to be simple and use either : <code>{Movie Title} ({ReleaseYear}) - {Quality Full}</code> or even <code>{Movie Title} ({ReleaseYear})</code>.<br><br>
+Once this is done, add a Root Folder by clicking the <code>Add Root Folder</code> button at the bottom of the page. You can then select the folder you want to add (in our case, the Movies folder). Once you're done, click on <code>Save</code> at the bottom of the page. Don't forget to hit save at the top left of the page to save your changes.<br>
+Now, it's time to add qBitTorrent as our download client. To do so, click on <code>Download Clients</code> in the left sidebar and then click on the <code>+</code>. You can then choose the download client you want to add (qBitTorrent) and fill in <code>Username</code> and <code>Password</code> with the credentials you've set in qBitTorrent. You can leave everything else as is. Once you're done, click on <code>Test</code> at the bottom of the form and then <code>Save</code>.<br>
+Finally, you're gonna want to copy the API key of Radarr to use it in Overseer. To do so, click on <code>Settings</code> in the left sidebar and then click on <code>General</code>. You can then copy the API key and save it somewhere safe for later.</p>
+<h3 id="sonarr-2">Sonarr </h3>
+<p>To configure Sonarr, visit <code>http://&lt;your-server-ip&gt;:8989</code> in your browser. Then, it's pretty much the same process.<br><br>
+Don't forget to hit save at the top left of the page to save your changes.<br>
+And don't forget to copy the API key of Sonarr to use it in Overseer.</p>
+<h3 id="prowlarr-1">Prowlarr </h3>
+<p>To start to configure Prowlarr, visit <code>http://&lt;your-server-ip&gt;:9696</code> in your browser. You'll first be asked to enable and configure authentification, choose your preferred method and complete the step.<br>
+Then, the first thing you need to do is to add indexers. To do so, click on <code>Indexers</code> in the left sidebar and then click on <code>Add New Indexer</code>. You can then choose the indexer you want to add and follow the instructions to add it.<br>
+I recommend the following indexers:</p>
+<ul>
+<li>TheRARBG</li>
+<li><a href="http://kickasstorrents.ws">kickasstorrents.ws</a></li>
+<li>Torrentz2nz</li>
+<li>1337x (if you have a VPN)</li>
+<li><a href="http://Nyaa.si">Nyaa.si</a> (if you watch anime)</li>
+<li>Bangumi Moe (if you watch anime also)<br>
+Once you've added the indexers you want, you can move on to the next step which is to add download clients. To do so, click on <code>Settings</code> in the left sidebar and then click on <code>Download Clients</code>. You can then click on the big <code>+</code> button to add a new download client. You can then choose the download client you want to add (qBitTorrent in our case).<br>
+Here, fill in the informations such as the username and the password. You can leave the category blank. Once you're done, click on <code>Save</code> at the bottom of the page.</li>
+</ul>
+<p>Now, let's add Radarr and Sonarr as our Applicatons. To do so, click on <code>Settings</code> in the left sidebar and then click on <code>Apps</code>. You can then click on the big <code>+</code> button to add a new application. You can then choose the application you want to add (Radarr or Sonarr). Here, fill in the API key you've copied from Radarr or Sonarr. Once you're done, click on <code>Save</code> at the bottom of the page.</p>
+<h3 id="plex-2">Plex </h3>
+<p>To configure Plex, you need to go to <code>http://&lt;your-server-ip&gt;:32400/web</code> in your browser, link your Plex account and then click on <code>Got it</code> and close the Plex Pass subscription plans proposal.<br>
+Give your server a name which allows you to easily identify it and click on <code>Next</code>.<br>
+Then, you can add your media folders by clicking on <code>Add Library</code> and then selecting the type of media you want to add (Movies, Series, Music, etc.). You can then select the folder you want to add (in our case, the Movies folder and then the Series one). Once you're done, click on <code>Next</code> at the bottom of the page.<br>
+You can then click on <code>Next</code> again and then <code>Done</code> at the bottom of the page.<br><br>
+Now, if you want to create multiple local user accounts, click on the wrench on the top right of the page and then click on <code>Plex Home</code> and then <code>Create managed Account</code>. You can then fill in the informations.</p>
+<h3 id="overseer-2">Overseer </h3>
+<blockquote>
+<p>This is the last step of the configuration, once you've done this, you're done with the configuration of your media server.</p>
+</blockquote>
+<p>Go to <code>http://&lt;your-server-ip&gt;:5055</code> in your browser. You'll be asked to sign-in using your Plex account, once you do so, you'll be asked to setup which Plex server you wanna use.<br>
+Click on the refresh arrow and select <code>Manual Configuration</code> in the dropdown menu if not already set, then set the IP to be <code>localhost</code> and click on <code>Save Changes</code>.<br><br>
+Under <code>Plex Libraries</code> you should now see the libraries you've added in Plex, you can now check both of them and click on <code>Start Scan</code> and <code>Continue</code>.<br><br>
+Now, you'll be asked to add your Radarr and Sonarr instances, you can do so by clicking on <code>Add Radarr Server</code> and then filling in the following :</p>
+<ul>
+<li>Default Server: 🗹</li>
+<li>4k Server: ☐</li>
+<li>Server Name: Main Radarr</li>
+<li>Hostname or IP Address: <code>localhost</code></li>
+<li>Port: 7878</li>
+<li>Use SSL: ☐</li>
+<li>API Key: The API key you've copied from Radarr<br>
+Once these informations are filled in, click on <code>Test</code> and then fill in the following dropdowns :</li>
+<li>Quality Profile : Any</li>
+<li>Root Folder : <code>/path/to/your/media/Movies</code></li>
+<li>Minimum Availability : Released</li>
+<li>Enable Scan : ☑</li>
+<li>Enable Automatic Search : ☑</li>
+</ul>
+<p>You can then click on <code>Add Server</code> to save your changes.<br>
+Then click on <code>Add Sonarr Server</code> and then repeat the process with your Sonarr instance.<br>
+Just switch the name to Main Sonarr and choose the right API key.<br>
+In the dropdowns, you can fill in the following :</p>
+<ul>
+<li>Quality Profile : Any</li>
+<li>Root Folder : <code>/path/to/your/media/Series</code></li>
+<li>Language Profile : Deprecated</li>
+<li>Anime Quality Profile : Any</li>
+<li>Anime Root Folder : <code>/path/to/your/media/Series</code></li>
+<li>Anime Language Profile : Deprecated</li>
+<li>Enable Scan : ☑</li>
+<li>Enable Automatic Search : ☑</li>
+</ul>
+<p>You can then click on <code>Add Server</code> to save your changes.</p>
+<p>Finally, you can click on <code>Finish Setup</code> and you're done with the configuration of your media server.</p>
+<p><strong>Congratulations! You've successfully created your own media server! <br> Feel free to explore all the options available to you in Overseerr !!!</strong></p>
+<hr>
+<h2 id="credits-and-software-used">Credits and software used </h2>
+<p>Made with ❤️ by <a href="https://github.com/ano0002/">Ano0002</a></p>
+<ul>
+<li><a href="https://trash-guides.info/">Trash Guides</a></li>
+<li><a href="https://wiki.servarr.com/">Servarr</a></li>
+<li><a href="https://support.plex.tv/">Plex</a></li>
+<li><a href="https://docs.docker.com/">Docker</a></li>
+<li><a href="https://ubuntu.com/">Ubuntu</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL</a></li>
+<li><a href="https://www.qbittorrent.org/">qBitTorrent</a></li>
+<li><a href="https://overseerr.dev/">Overseerr</a></li>
+</ul>
+</div>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
