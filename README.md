@@ -6,6 +6,8 @@ Here you can find some guides I made I hope you'll find useful
 
 - [Media Server](./MediaServer/MediaServer.html) <a href="./MediaServer/MediaServer.pdf" download>(⇓ PDF)</a>
 
+- [Oculus Sideloading](./OculusSideloading/OculusSideloading.html) <a href="./OculusSideloading/OculusSideloading.pdf" download>(⇓ PDF)</a>
+
 More guides will hopefully be added in the future.
 
 ## Issues
